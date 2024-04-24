@@ -8,16 +8,15 @@
 
 LiquidCrystal_I2C lcd(0x27,16,2);  
 dht DHT;                           
-
 void setup() {
   pinMode(buzzer, OUTPUT);
   
-  lcd.init();      
-  lcd.backlight();        
+  lcd.init();             
+  lcd.backlight();       
 
   lcd.print("MQ2 warming up!");
-  delay(2000);      
-  lcd.clear();         
+  delay(2000);          
+  lcd.clear();          
 }
 
 void loop() {
@@ -36,7 +35,7 @@ void loop() {
 }
 
 int MQ2(){
-  int sensorValue = digitalRead(MQ2pin);
+  int sensorValue = digitalRead(MQ2pin); 
 
   lcd.setCursor(8,1);
   lcd.print("Gas:");
@@ -55,7 +54,7 @@ float DHT11_Sensor(){
   
   float h = DHT.humidity;
 
-  lcd.setCursor(11,0);
+  lcd.setCursor(11,0); 
   lcd.print("H:");
   lcd.setCursor(0,1);
   lcd.print(h);
@@ -63,7 +62,7 @@ float DHT11_Sensor(){
 
   return h;
 }
-*/
+
 float Temp(){
   int reading = analogRead(tempPin);
 
@@ -71,7 +70,7 @@ float Temp(){
 
   float temperatureC = voltage * 100;
 
-  lcd.setCursor(0, 0);   
+  lcd.setCursor(0, 0);
   lcd.print("T:");
   lcd.setCursor(2, 0);
   lcd.print(temperatureC);
